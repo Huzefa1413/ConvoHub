@@ -47,13 +47,13 @@ const Signup = () => {
     const signupHandler = (e) => {
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, e.email, e.password)
-            .then((userCredential) => {
-
+            .then(() => {
                 updateProfile(auth.currentUser, {
                     displayName: e.username
                 }).then(() => {
                 }).catch((error) => {
                     console.error(error)
+                    alert('Unable to Get Username')
                     setIsLoading(false);
                 });
                 navigate('/');
@@ -61,6 +61,7 @@ const Signup = () => {
             })
             .catch((error) => {
                 console.error(error)
+                alert('Unable to Login, Email already in use')
                 setIsLoading(false)
             });
     }

@@ -5,9 +5,10 @@ import '../index.css';
 import moment from 'moment';
 import { doc, deleteDoc, updateDoc } from "firebase/firestore";
 import { db } from '../firebaseConfig';
+import { getAuth } from 'firebase/auth';
 
 const Posts = (props) => {
-
+    const auth = getAuth()
     const [editText, setEditText] = useState("");
     const [editing, setEditing] = useState(false);
 
@@ -30,7 +31,7 @@ const Posts = (props) => {
                 <div className="picname">
                     <img src={profile} alt="" />
                     <div className="nametime">
-                        <p>Huzefa Mustafa</p>
+                        <p>{props.post.userName}</p>
                         <p>{moment((props.post.createdOn?.seconds) ? props.post.createdOn?.seconds * 1000 : undefined).format('Do MMMM, h:mm a')}</p>
                     </div>
                 </div>
@@ -53,11 +54,12 @@ const Posts = (props) => {
                     </div>
                     <hr />
                 </> : ""}
-            <div className="buttonbox">
-                <button onClick={() => { deletePost(props.post.id) }}>Delete</button>
-                <button className={`${(!editing) ? "" : "none"}`} onClick={() => { setEditing(true); setEditText(props.post.text) }}>Edit</button>
-                <button className={`${(editing) ? "" : "none"}`} onClick={() => { props.post.text = editText; updatePost(props.post.id, props.post.text) }}>Update</button>
-            </div>
+            {(props.post.userId === auth.currentUser.uid) ?
+                <div className="buttonbox">
+                    <button onClick={() => { deletePost(props.post.id) }}>Delete</button>
+                    <button className={`${(!editing) ? "" : "none"}`} onClick={() => { setEditing(true); setEditText(props.post.text) }}>Edit</button>
+                    <button className={`${(editing) ? "" : "none"}`} onClick={() => { props.post.text = editText; updatePost(props.post.id, props.post.text) }}>Update</button>
+                </div> : null}
         </div>
     )
 }

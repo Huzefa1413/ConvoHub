@@ -8,6 +8,7 @@ import Posts from './Posts.jsx';
 import axios from 'axios';
 import { collection, addDoc, onSnapshot, query, serverTimestamp, orderBy } from "firebase/firestore";
 import { db } from '../firebaseConfig';
+import { getAuth } from 'firebase/auth';
 
 const AddPosts = () => {
 
@@ -15,6 +16,7 @@ const AddPosts = () => {
     const [posts, setPosts] = useState([]);
     const [image, setImage] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
+    const auth = getAuth()
 
     const savePost = async (e) => {
 
@@ -30,10 +32,13 @@ const AddPosts = () => {
                     await addDoc(collection(db, "posts"), {
                         text: postText,
                         createdOn: serverTimestamp(),
+                        userId: auth.currentUser.uid,
+                        userName: auth.currentUser.displayName
                     });
                     setIsLoading(false)
                 } catch (e) {
                     console.error("Error adding document: ", e);
+                    setIsLoading(false)
                 }
                 setPostText("");
             }
@@ -51,11 +56,14 @@ const AddPosts = () => {
                                 await addDoc(collection(db, "posts"), {
                                     text: postText,
                                     createdOn: serverTimestamp(),
-                                    img: res?.data?.url
+                                    img: res?.data?.url,
+                                    userId: auth.currentUser.uid,
+                                    userName: auth.currentUser.displayName
                                 });
                                 setIsLoading(false)
                             } catch (e) {
                                 console.error("Error adding document: ", e);
+                                setIsLoading(false)
                             }
                         })
                     setImage(null);

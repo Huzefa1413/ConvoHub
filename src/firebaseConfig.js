@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCQxGQSZ9xxr90Zokmn7YVU5spvRM_E-ok",
-    authDomain: "react-socialmediaapp-560cd.firebaseapp.com",
-    projectId: "react-socialmediaapp-560cd",
-    storageBucket: "react-socialmediaapp-560cd.appspot.com",
-    messagingSenderId: "465350864561",
-    appId: "1:465350864561:web:5e80dc764e0eb25a2d3c90"
+    apiKey: "AIzaSyDehjrad5QLca-V1rNzX2BaSuoLvW3KSpw",
+    authDomain: "react-facebook-firebaseauth.firebaseapp.com",
+    projectId: "react-facebook-firebaseauth",
+    storageBucket: "react-facebook-firebaseauth.appspot.com",
+    messagingSenderId: "706862051830",
+    appId: "1:706862051830:web:2badc9bd5d7eceaff257d7"
 };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

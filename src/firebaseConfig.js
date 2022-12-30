@@ -1,13 +1,14 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDehjrad5QLca-V1rNzX2BaSuoLvW3KSpw",
-    authDomain: "react-facebook-firebaseauth.firebaseapp.com",
-    projectId: "react-facebook-firebaseauth",
-    storageBucket: "react-facebook-firebaseauth.appspot.com",
-    messagingSenderId: "706862051830",
-    appId: "1:706862051830:web:2badc9bd5d7eceaff257d7"
+    apiKey: "AIzaSyBDpjP7qWeA3gfLnuO0V_4J7ZqcpGMeoz4",
+    authDomain: "fakebook-e256d.firebaseapp.com",
+    projectId: "fakebook-e256d",
+    storageBucket: "fakebook-e256d.appspot.com",
+    messagingSenderId: "8713618213",
+    appId: "1:8713618213:web:5b997484fdfe107cc890cc"
 };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

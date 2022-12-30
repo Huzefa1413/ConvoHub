@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import profile from './assets/profile.png';
-import '../index.css';
+import './styles/posts.css';
 import moment from 'moment';
 import { doc, deleteDoc, updateDoc } from "firebase/firestore";
 import { db } from '../firebaseConfig';

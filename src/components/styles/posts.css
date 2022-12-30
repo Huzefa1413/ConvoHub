@@ -1,0 +1,81 @@
+div.post {
+    width: 600px;
+    margin: 20px auto;
+    border-radius: 20px;
+    padding: 0px 20px;
+    border: 1px solid black;
+    background-color: #fff;
+}
+
+div.post div.posthead {
+    width: 100%;
+    padding: 10px 0px;
+}
+
+div.post div.posthead div.picname {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+div.post div.posthead div.picname img {
+    width: 40px;
+    margin-right: 20px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+div.buttonbox {
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+div.buttonbox button {
+    width: 100px;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 0px;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+div.buttonbox button:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+}
+
+div.postcontent p {
+    padding: 10px;
+}
+
+div.postcontent input {
+    border: 0px;
+    width: 100%;
+    padding: 10px;
+    height: 100%;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.none {
+    display: none;
+}
+
+div.image {
+    width: 100%;
+    height: fit-content;
+    padding: 10px 0px;
+}
+
+div.image img {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 620px) {
+    div.post {
+        width: 90%;
+    }
+}

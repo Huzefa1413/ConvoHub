@@ -3,7 +3,7 @@ import logo from './assets/facebook.png'
 import logout from './assets/logout.png'
 import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
-
+import './styles/navbar.css'
 const Navbar = () => {
     const navigate = useNavigate();
     const logoutHandler = () => {
@@ -17,11 +17,11 @@ const Navbar = () => {
     }
     return (
         <div className='navbar'>
-            <div>
+            <div className='left'>
                 <div className="logoimage"><img src={logo} alt="" /></div>
                 <div className="logoname">Facebook</div>
             </div>
-            <div>
+            <div className='right'>
                 <img src={logout} alt="logout" onClick={logoutHandler} />
             </div>
         </div>

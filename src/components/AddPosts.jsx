@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import '../index.css';
+import './styles/addpost.css';
 import profile from './assets/profile.png';
 import photos from './assets/photos.png'
 import post from './assets/post.png';

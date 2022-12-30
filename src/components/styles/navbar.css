@@ -1,0 +1,39 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    height: 80px;
+    position: fixed;
+    top: 0;
+}
+
+.navbar>div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .left .logoimage {
+    height: 100%;
+    padding: 15px;
+}
+
+.navbar .left .logoimage img {
+    height: 100%;
+    cursor: pointer;
+}
+
+.navbar .left .logoname {
+    font-size: 30px;
+    font-weight: 900;
+    font-family: cursive;
+    cursor: pointer;
+}
+
+.right img {
+    height: 50%;
+    margin-right: 20px;
+    cursor: pointer;
+}

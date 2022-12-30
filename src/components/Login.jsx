@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import './styles/login.css';
 
 const Login = () => {
     const navigate = useNavigate();

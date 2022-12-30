@@ -4,6 +4,7 @@ import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase
 import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import './styles/signup.css';
 
 const Signup = () => {
 

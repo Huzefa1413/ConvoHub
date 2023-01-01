@@ -17,11 +17,11 @@ const Navbar = () => {
     }
     return (
         <div className='navbar'>
-            <div className='left'>
+            <div className='leftnav'>
                 <div className="logoimage"><img src={logo} alt="" /></div>
                 <div className="logoname">Facebook</div>
             </div>
-            <div className='right'>
+            <div className='rightnav'>
                 <img src={logout} alt="logout" onClick={logoutHandler} />
             </div>
         </div>

@@ -1,7 +1,49 @@
-form {
+.background {
+    height: 100vh;
+    width: 100%;
+    background-image: url("/src/components/assets/blue-liquid-marble-background-diy-flowing-texture-experimental-art.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+}
+
+.signup {
+    width: 80%;
+    /* border: 1px solid red; */
+    display: flex;
+    background-color: white;
+}
+
+.left {
+    width: 20%;
+    border-right: 1px solid black;
+}
+
+.right {
+    width: 80%;
+}
+
+.row1 {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+
+}
+
+.row2 {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+
+}
+
+.signupform {
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
     flex-direction: column;
     padding: 0rem 20px;
     overflow: hidden;
@@ -11,24 +53,23 @@ form {
 .title {
     font-size: 2.2rem;
     color: #444;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
 }
 
-.input-field {
-    width: 70%;
-    background-color: #f0f0f0;
+.input-fieldsignup {
+    width: 45%;
     margin: 10px 0;
-    height: 55px;
-    border-radius: 55px;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
+    height: 40px;
 }
 
-.input-field input {
+.inpsignup {
+    width: 60%;
     background: none;
     outline: none;
-    border: none;
+    border-bottom: 3px solid gray;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     line-height: 1;
     font-weight: 600;
     font-size: 1.1rem;
@@ -41,28 +82,119 @@ form {
     font-weight: 500;
 }
 
-.btn {
+.avator {
+    width: 60px;
+    height: 60px;
+    padding-top: 10px;
+    margin: auto;
+}
+
+.btnsignup {
     width: 150px;
     border: none;
-    outline: none;
     height: 49px;
-    border-radius: 49px;
+    background-color: #00A8F3;
     text-transform: uppercase;
     font-weight: 600;
-    margin: 10px 0;
+    margin: 10px 0 10px 20px;
     cursor: pointer;
     transition: 0.5s;
     text-align: center;
 }
 
-.btn:hover {
+.loginbtnsign {
+    width: 100%;
+    height: 170px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.signupbtns {
+    width: 100%;
+    border: none;
+    border-top: 1px solid black;
+    background-color: #00A8F3;
+    height: 170px;
+    color: white;
+    cursor: pointer;
+
+}
+
+.btnsignup:hover {
     background-color: #46cac4;
 }
 
-span {
-    width: 67%;
-    padding-left: 20px;
+.error {
+    width: 100%;
     color: red;
+    /* font-size: 12px; */
+    text-align: left;
     letter-spacing: 1px;
     word-spacing: 2px;
+}
+
+.navlog {
+    background-color: transparent;
+    border: none;
+    color: #00A8F3;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.already {
+    text-align: left;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 760px) {
+    .signup {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+    }
+
+    .left {
+        width: 100%;
+        display: flex;
+    }
+
+    .right {
+        text-align: center;
+        width: 100%;
+    }
+
+    .loginbtnsign {
+        width: 50%;
+        background-color: white;
+        border: none;
+        height: 100px;
+    }
+
+    .signupbtns {
+        width: 50%;
+        border: none;
+        border-top: 1px solid black;
+        background-color: #00A8F3;
+        height: 100px;
+    }
+
+    .row1 {
+        flex-direction: column;
+    }
+
+    .row2 {
+        flex-direction: column;
+    }
+
+    .input-fieldsignup {
+        width: 90%;
+        margin: 10px 0;
+        height: 55px;
+    }
+
+    .btnsignup {
+        margin-left: 0px;
+    }
 }

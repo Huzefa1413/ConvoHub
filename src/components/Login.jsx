@@ -1,6 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik';
+import aviator from './assets/aviator.png';
+import register from './assets/register.png';
 import * as yup from 'yup';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import './styles/login.css';
@@ -40,19 +42,47 @@ const Login = () => {
     }
 
     return (
-        <form onSubmit={formik.handleSubmit}>
-            <h2 className="title">Sign in</h2>
-            <div className="input-field">
-                <input name='email' type="email" placeholder="Email" value={formik.values.email} onChange={formik.handleChange} />
+        <div className="backgroundlogin">
+
+            <div className="login">
+                <div className="leftlog">
+                    <button className="loginbtn" value='login Page' onClick={() => navigate('/')}>
+                        <div className="avator1"><img width="100%" src={aviator} alt="img here" /></div>
+                        <h2>Login</h2>
+                    </button>
+                    <br />
+                    <button className="signupbtn" value='Signup Page' onClick={() => navigate('/signup')}>
+                        <div className="avator1"><img width="100%" src={register} alt="img here" /></div>
+                        <h2>SignUp</h2>
+                    </button>
+                </div>
+                <div className="rightlog">
+                    <form className='loginform' onSubmit={formik.handleSubmit}>
+
+                        <h3 className="titlelogin">Login</h3>
+                        <div className="input-fieldlogin">
+                            <input name='email' type="email" placeholder="Email" value={formik.values.email} onChange={formik.handleChange} />
+                        </div>
+                        <div className='error'>{formik.touched.email && formik.errors.email}</div>
+                        <div className="input-fieldlogin">
+                            <input name='password' type="password" placeholder="Password" value={formik.values.password} onChange={formik.handleChange} />
+                        </div>
+                        <div className='error'>{formik.touched.password && formik.errors.password}</div>
+                        <input value="Login" type='submit' className="btnlogin" />
+                        {/* <input type="button" value='Signup Page' className='btn' onClick={() => navigate('/signup')} /> */}
+                        <div className="already">
+                            <br />
+                            <h4>Dont have an Account? <button className='navlog' onClick={() => navigate('/signup')}>Signup</button></h4>
+                            <br />
+                        </div>
+                    </form>
+                </div>
             </div>
-            <span>{formik.touched.email && formik.errors.email}</span>
-            <div className="input-field">
-                <input name='password' type="password" placeholder="Password" value={formik.values.password} onChange={formik.handleChange} />
-            </div>
-            <span>{formik.touched.password && formik.errors.password}</span>
-            <input value="Login" type='submit' className="btn" />
-            <input type="button" value='Signup Page' className='btn' onClick={() => navigate('/signup')} />
-        </form>
+
+
+
+
+        </div>
     )
 }
 

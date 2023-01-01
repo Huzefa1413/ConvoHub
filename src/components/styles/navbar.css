@@ -15,24 +15,24 @@
     align-items: center;
 }
 
-.navbar .left .logoimage {
+.navbar .leftnav .logoimage {
     height: 100%;
     padding: 15px;
 }
 
-.navbar .left .logoimage img {
+.navbar .leftnav .logoimage img {
     height: 100%;
     cursor: pointer;
 }
 
-.navbar .left .logoname {
+.navbar .leftnav .logoname {
     font-size: 30px;
     font-weight: 900;
     font-family: cursive;
     cursor: pointer;
 }
 
-.right img {
+.rightnav img {
     height: 50%;
     margin-right: 20px;
     cursor: pointer;

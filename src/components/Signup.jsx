@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from "react";
+import aviator from './assets/aviator.png';
+import register from './assets/register.png';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik';
@@ -69,31 +71,67 @@ const Signup = () => {
 
     return (
         <>
-            <form onSubmit={formik.handleSubmit}>
-                <h2 className="title">Sign Up</h2>
-                <div className="input-field">
-                    <input name='username' type="text" placeholder="Username" value={formik.values.username} onChange={formik.handleChange} />
+            <div className="background">
+                <div className="signup">
+                    <div className="left">
+                        <button className="loginbtnsign" value='login Page' onClick={() => navigate('/')}>
+                            <div className="avator"><img src={aviator} alt="img here" /></div>
+                            <h2>Login</h2>
+                        </button>
+                        <br />
+                        <button className="signupbtns" value='Signup Page' onClick={() => navigate('/signup')}>
+                            <div className="avator"><img src={register} alt="img here" /></div>
+                            <h2>SignUp</h2>
+                        </button>
+                    </div>
+                    <div className="right">
+                        <form className='signupform' onSubmit={formik.handleSubmit}>
+                            <h3 className="title">Sign Up</h3>
+
+                            <div className="row1">
+                                <div className="input-fieldsignup">
+                                    <input className='inpsignup' name='username' type="text" placeholder="Username" value={formik.values.username} onChange={formik.handleChange} />
+                                    <div className='error'>{formik.touched.username && formik.errors.username}</div>
+                                </div>
+
+
+                                <div className="input-fieldsignup">
+                                    <input className='inpsignup' name='email' type="email" placeholder="Email" value={formik.values.email} onChange={formik.handleChange} />
+                                    <div className='error'>{formik.touched.email && formik.errors.email}</div>
+                                </div>
+
+                            </div>
+                            <div className="row2">
+
+                                <div className="input-fieldsignup">
+                                    <input className='inpsignup' name='password' type="password" placeholder="Password" value={formik.values.password} onChange={formik.handleChange} />
+                                    <div className='error'>{formik.touched.password && formik.errors.password}</div>
+                                </div>
+
+                                <div className="input-fieldsignup">
+                                    <input className='inpsignup' name='confirmPassword' type="password" placeholder="Confirm Password" value={formik.values.confirmPassword} onChange={formik.handleChange} />
+                                    <div className='error'>{formik.touched.confirmPassword && formik.errors.confirmPassword}</div>
+                                </div>
+
+
+                            </div>
+
+
+
+                            {
+                                (!isLoading) ? (<input value="Signup" type='submit' className="btnsignup" />) : (<div className='loader'></div>)
+                            }
+                            <div className="already">
+                                <br />
+                                <h4>Already have an Account? <button className='navlog' onClick={() => navigate('/')}>Login</button></h4>
+                                <br />
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
 
-                <span>{formik.touched.username && formik.errors.username}</span>
-                <div className="input-field">
-                    <input name='email' type="email" placeholder="Email" value={formik.values.email} onChange={formik.handleChange} />
-                </div>
-                <span>{formik.touched.email && formik.errors.email}</span>
-                <div className="input-field">
-                    <input name='password' type="password" placeholder="Password" value={formik.values.password} onChange={formik.handleChange} />
-                </div>
-                <span>{formik.touched.password && formik.errors.password}</span>
-                <div className="input-field">
-                    <input name='confirmPassword' type="password" placeholder="Confirm Password" value={formik.values.confirmPassword} onChange={formik.handleChange} />
-                </div>
-                <span> {formik.touched.confirmPassword && formik.errors.confirmPassword}</span>
-
-                {
-                    (!isLoading) ? (<input value="Signup" type='submit' className="btn" />) : (<div className='loader'></div>)
-                }
-                <input type="button" value='Login Page' className='btn' onClick={() => navigate('/')} />
-            </form>
+            </div>
         </>
     )
 }

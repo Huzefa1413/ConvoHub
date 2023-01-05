@@ -1,7 +1,6 @@
-.backgroundlogin {
+div.background {
     height: 100vh;
     width: 100%;
-    /* background: linear-gradient(to right,darkblue,blue,lightblue,white); */
     background-image: url("/src/components/assets/blue-liquid-marble-background-diy-flowing-texture-experimental-art.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,47 +10,88 @@
     align-items: center;
 }
 
-.loginform {
+div.background div.main-container {
+    width: 80%;
+    display: flex;
+    background-color: white;
+}
+
+div.background div.main-container div.left-div {
+    width: 20%;
+    border-right: 1px solid rgb(0, 0, 0);
+}
+
+div.background div.main-container div.left-div div.left-loginbtn {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+div.background div.main-container div.left-div div.left-loginbtn:hover {
+    transition: 1s;
+    background-color: #46cac4;
+}
+
+div.background div.main-container div.left-div div.left-signupbtn {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+div.background div.main-container div.left-div div.left-signupbtn:hover {
+    transition: 1s;
+    background-color: #46cac4;
+}
+
+div.background div.main-container div.right-div {
+    width: 80%;
+}
+
+div.background div.main-container div.right-div form.loginform {
     display: flex;
     flex-direction: column;
     width: 80%;
     padding-left: 30px;
 }
 
-.titlelogin {
+div.background div.main-container div.right-div form.loginform h3.title {
     font-size: 2.2rem;
     color: #444;
     margin-top: 20px;
     margin-bottom: 10px;
 }
 
-.input-fieldlogin {
+div.background div.main-container div.right-div form.loginform div.input-field-login {
     width: 100%;
-    margin: 10px 0;
     height: 40px;
+    margin: 10px;
 }
 
-.input-fieldlogin>input {
-    width: 60%;
-    background: none;
+div.background div.main-container div.right-div form.loginform div.input-field-login>input {
+    width: 100%;
     outline: none;
+    border: none;
     border-bottom: 3px solid gray;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    line-height: 1;
     font-weight: 600;
     font-size: 1.1rem;
     color: #333;
+}
+
+div.background div.main-container div.right-div form.loginform div.error {
     width: 100%;
+    color: red;
+    text-align: left;
+    letter-spacing: 1px;
+    word-spacing: 2px;
 }
 
-.input-field input::placeholder {
-    color: #aaa;
-    font-weight: 500;
-}
-
-.btnlogin {
+div.background div.main-container div.right-div form.loginform input.btnlogin {
     width: 150px;
     outline: none;
     height: 49px;
@@ -65,105 +105,49 @@
     border: none;
 }
 
-.btnlogin:hover {
+div.background div.main-container div.right-div form.loginform input.btnlogin:hover {
     background-color: #46cac4;
 }
 
-span {
-    width: 67%;
-    padding-left: 20px;
-    color: red;
-    letter-spacing: 1px;
-    word-spacing: 2px;
-}
-
-.login {
-    width: 80%;
-    /* border: 2px solid red; */
+div.background div.main-container div.right-div form.loginform div.already {
     display: flex;
-    background-color: white;
+    column-gap: 10px;
+    margin: 20px 0px;
 }
 
-.leftlog {
-    width: 20%;
-    border-right: 1px solid rgb(0, 0, 0);
-}
-
-.rightlog {
-    width: 80%;
-    /* border: 1px solid rgb(30, 255, 0); */
-}
-
-.loginbtn {
-    width: 100%;
-    height: 170px;
-    /* border: 1px solid purple; */
-    text-align: center;
-    cursor: pointer;
-    background-color: #00A8F3;
-    color: white;
-    border: none;
-}
-
-.signupbtn {
-    width: 100%;
-    height: 157px;
-    /* border: 1px solid rgb(0, 102, 128); */
-    text-align: center;
-    cursor: pointer;
+div.background div.main-container div.right-div form.loginform div.already button {
     background-color: white;
     border: none;
-    border-top: 1px solid black;
+    cursor: pointer;
+    color: #00A8F3;
 }
 
-.avator1 {
-    width: 60px;
-    padding-top: 10px;
-    margin: auto;
-}
-
-.avator1 img {
-    width: 48px;
-}
-
-@media screen and (min-width: 320px) and (max-width: 760px) {
-    .login {
+@media screen and (max-width: 760px) {
+    div.background div.main-container {
         display: flex;
         flex-direction: column;
         background-color: white;
     }
 
-    .leftlog {
+    div.background div.main-container div.left-div {
+        width: 100%;
         display: flex;
-        width: 100%;
-        border: none;
-        border-bottom: 1px solid black;
+        border-right: none;
+        border-bottom: 1px solid rgb(0, 0, 0);
     }
 
-    .loginbtn {
+    div.background div.main-container div.left-div div.left-loginbtn {
         width: 50%;
-        height: 157px;
-        /* border: 1px solid purple; */
-        text-align: center;
-        cursor: pointer;
-        background-color: #00A8F3;
-        color: white;
-        border: none;
+        padding: 20px 0px;
     }
 
-    .signupbtn {
+    div.background div.main-container div.left-div div.left-signupbtn {
         width: 50%;
-        height: 157px;
-        /* border: 1px solid rgb(0, 102, 128); */
-        text-align: center;
-        cursor: pointer;
-        background-color: white;
-        border: none;
-
+        padding: 20px 0px;
     }
 
-    .rightlog {
-        width: 100%;
+    div.background div.main-container div.right-div {
         text-align: center;
+        width: 100%;
     }
 }

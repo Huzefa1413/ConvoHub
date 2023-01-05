@@ -1,4 +1,4 @@
-.navbar {
+div.navbar {
     width: 100%;
     display: flex;
     align-items: center;
@@ -9,30 +9,30 @@
     top: 0;
 }
 
-.navbar>div {
+div.navbar>div {
     height: 100%;
     display: flex;
     align-items: center;
 }
 
-.navbar .leftnav .logoimage {
+div.navbar div.leftnav div.logoimage {
     height: 100%;
     padding: 15px;
 }
 
-.navbar .leftnav .logoimage img {
+div.navbar div.leftnav div.logoimage img {
     height: 100%;
     cursor: pointer;
 }
 
-.navbar .leftnav .logoname {
+div.navbar div.leftnav div.logoname {
     font-size: 30px;
     font-weight: 900;
     font-family: cursive;
     cursor: pointer;
 }
 
-.rightnav img {
+div.rightnav img {
     height: 50%;
     margin-right: 20px;
     cursor: pointer;

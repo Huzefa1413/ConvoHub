@@ -42,47 +42,38 @@ const Login = () => {
     }
 
     return (
-        <div className="backgroundlogin">
-
-            <div className="login">
-                <div className="leftlog">
-                    <button className="loginbtn" value='login Page' onClick={() => navigate('/')}>
-                        <div className="avator1"><img width="100%" src={aviator} alt="img here" /></div>
+        <div className="background">
+            <div className="main-container">
+                <div className="left-div">
+                    <div style={{ backgroundColor: '#00A8F3' }} className="left-loginbtn" value='login Page' onClick={() => navigate('/')}>
+                        <div className="left-imgDiv"><img src={aviator} alt="login" /></div>
                         <h2>Login</h2>
-                    </button>
-                    <br />
-                    <button className="signupbtn" value='Signup Page' onClick={() => navigate('/signup')}>
-                        <div className="avator1"><img width="100%" src={register} alt="img here" /></div>
+                    </div>
+                    <div className="left-signupbtn" value='Signup Page' onClick={() => navigate('/signup')}>
+                        <div className="left-imgDiv"><img src={register} alt="signup" /></div>
                         <h2>SignUp</h2>
-                    </button>
+                    </div>
                 </div>
-                <div className="rightlog">
+                <div className="right-div">
                     <form className='loginform' onSubmit={formik.handleSubmit}>
-
-                        <h3 className="titlelogin">Login</h3>
-                        <div className="input-fieldlogin">
+                        <h3 className="title">Login</h3>
+                        <div className="input-field-login">
                             <input name='email' type="email" placeholder="Email" value={formik.values.email} onChange={formik.handleChange} />
+                            <div className='error'>{formik.touched.email && formik.errors.email}</div>
                         </div>
-                        <div className='error'>{formik.touched.email && formik.errors.email}</div>
-                        <div className="input-fieldlogin">
+                        <div className="input-field-login">
                             <input name='password' type="password" placeholder="Password" value={formik.values.password} onChange={formik.handleChange} />
+                            <div className='error'>{formik.touched.password && formik.errors.password}</div>
                         </div>
-                        <div className='error'>{formik.touched.password && formik.errors.password}</div>
                         <input value="Login" type='submit' className="btnlogin" />
-                        {/* <input type="button" value='Signup Page' className='btn' onClick={() => navigate('/signup')} /> */}
                         <div className="already">
-                            <br />
-                            <h4>Dont have an Account? <button className='navlog' onClick={() => navigate('/signup')}>Signup</button></h4>
-                            <br />
+                            <h4>Dont have an Account?</h4>
+                            <button onClick={() => navigate('/signup')}>Signup</button>
                         </div>
                     </form>
                 </div>
             </div>
-
-
-
-
-        </div>
+        </div >
     )
 }
 

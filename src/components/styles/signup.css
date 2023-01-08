@@ -127,7 +127,7 @@ div.background div.main-container div.right-div form.signupform div.already butt
     color: #00A8F3;
 }
 
-@media screen and (min-width: 320px) and (max-width: 760px) {
+@media screen and (max-width: 760px) {
     div.background div.main-container {
         display: flex;
         flex-direction: column;

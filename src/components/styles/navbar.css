@@ -1,39 +1,48 @@
 div.navbar {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #fff;
-    height: 80px;
-    position: fixed;
-    top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  backdrop-filter: blur(11.5px);
+  -webkit-backdrop-filter: blur(11.5px);
 }
 
-div.navbar>div {
-    height: 100%;
-    display: flex;
-    align-items: center;
+div.navbar > div {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 div.navbar div.leftnav div.logoimage {
-    height: 100%;
-    padding: 15px;
+  height: 100%;
+  padding: 15px;
 }
 
 div.navbar div.leftnav div.logoimage img {
-    height: 100%;
-    cursor: pointer;
+  height: 100%;
+  cursor: pointer;
 }
 
 div.navbar div.leftnav div.logoname {
-    font-size: 30px;
-    font-weight: 900;
-    font-family: cursive;
-    cursor: pointer;
+  font-size: 30px;
+  font-weight: 900;
+  font-family: cursive;
+  color: white;
+  cursor: pointer;
 }
 
 div.rightnav img {
-    height: 50%;
-    margin-right: 20px;
-    cursor: pointer;
+  height: 50%;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+  div.navbar div.leftnav div.logoname {
+    font-size: 25px;
+  }
 }

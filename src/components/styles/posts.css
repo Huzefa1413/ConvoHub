@@ -1,87 +1,100 @@
 div.post {
-    width: 600px;
-    margin: 20px auto;
-    border-radius: 20px;
-    padding: 10px 20px;
-    background-color: #fff;
-    box-shadow: 2px 3px 0px 0px rgb(199, 194, 194);
+  width: 90%;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background: rgba(210, 210, 220, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 div.post div.posthead {
-    width: 100%;
-    padding: 10px 0px;
+  width: 100%;
+  padding: 10px 0px;
 }
 
 div.post div.posthead div.picname {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
 }
 
 div.post div.posthead div.picname img {
-    width: 40px;
-    margin-right: 20px;
-    border-radius: 100%;
-    cursor: pointer;
+  width: 40px;
+  margin-right: 20px;
+  border-radius: 100%;
+  cursor: pointer;
 }
 
 div.postcontent p {
-    padding: 10px;
+  padding: 10px;
 }
 
 div.postcontent input {
-    border: 0px;
-    width: 100%;
-    padding: 10px;
-    height: 100%;
-    font-size: 16px;
-    font-family: 'Times New Roman', Times, serif;
+  border: 0px;
+  width: 100%;
+  padding: 10px;
+  height: 100%;
+  background: none;
+  font-size: 16px;
+  font-family: "Times New Roman", Times, serif;
 }
 
 div.image {
-    width: 100%;
-    height: fit-content;
-    padding: 10px 0px;
+  width: 100%;
+  height: fit-content;
+  padding: 10px 0px;
 }
 
 div.image img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 div.buttonbox {
-    padding-top: 10px;
-    display: flex;
-    justify-content: space-evenly;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 div.buttonbox button {
-    width: 100%;
-    padding: 5px;
-    cursor: pointer;
-    border: 0px;
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    color: #65676B;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  padding: 5px;
+  cursor: pointer;
+  border: 0px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
 }
-
 div.buttonbox button:hover {
-    transition: 0.5s;
-    background-color: rgb(247, 217, 217);
+  background-color: rgba(0, 255, 255, 0.2);
 }
-
 div.buttonbox button img {
-    width: 20px;
-    margin-right: 10px;
+  width: 20px;
+  margin-right: 10px;
 }
 
-@media screen and (max-width: 620px) {
-    div.post {
-        width: 90%;
-    }
+@media screen and (max-width: 600px) {
+  div.post {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 350px) {
+  div.buttonbox button {
+    font-size: 12px;
+  }
+  div.buttonbox button img {
+    width: 15px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  div.post {
+    width: 600px;
+  }
 }

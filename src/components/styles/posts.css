@@ -26,7 +26,9 @@ div.post div.posthead div.picname img {
   border-radius: 100%;
   cursor: pointer;
 }
-
+div.post div.posthead div.picname div b {
+  word-break: break-all;
+}
 div.postcontent p {
   padding: 10px;
 }

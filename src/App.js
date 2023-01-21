@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Profile from "./components/Profile";
 import Sidebar from "./components/Sidebar";
+
 const App = () => {
   return (
     <Router>

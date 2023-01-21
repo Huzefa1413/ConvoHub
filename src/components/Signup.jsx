@@ -30,7 +30,7 @@ const Signup = () => {
         .string("Enter your Username")
         .required("Username is required")
         .min(5, "Username should be of minimum 5 characters")
-        .max(50, "Limit exceed: Maximum 50 characters allowed"),
+        .max(30, "Limit exceed: Maximum 30 characters allowed"),
       email: yup
         .string("Enter your email")
         .email("Enter a valid email")
@@ -84,102 +84,100 @@ const Signup = () => {
   };
 
   return (
-    <div className="background">
-      <div className="main-container">
-        <div className="left-div">
-          <div
-            className="left-loginbtn"
-            value="login Page"
-            onClick={() => navigate("/")}
-          >
-            <div className="left-imgDiv">
-              <img src={aviator} alt="login" />
-            </div>
-            <h2>Login</h2>
+    <div className="main-container">
+      <div className="left-div">
+        <div
+          className="left-loginbtn"
+          value="login Page"
+          onClick={() => navigate("/")}
+        >
+          <div className="left-imgDiv">
+            <img src={aviator} alt="login" />
           </div>
-          <div
-            style={{ backgroundColor: "#00A8F3" }}
-            className="left-signupbtn"
-            value="Signup Page"
-            onClick={() => navigate("/signup")}
-          >
-            <div className="left-imgDiv">
-              <img src={register} alt="signup" />
-            </div>
-            <h2>SignUp</h2>
+          <h2>Login</h2>
+        </div>
+        <div
+          style={{ backgroundColor: "rgba(255, 255, 255, 0.18)" }}
+          className="left-signupbtn"
+          value="Signup Page"
+          onClick={() => navigate("/signup")}
+        >
+          <div className="left-imgDiv">
+            <img src={register} alt="signup" />
           </div>
+          <h2>SignUp</h2>
         </div>
-        <div className="right-div">
-          <form className="signupform" onSubmit={formik.handleSubmit}>
-            <h3 className="title">Sign Up</h3>
-            <div className="row">
-              <div className="input-fieldsignup">
-                <input
-                  className="inpsignup"
-                  name="username"
-                  type="text"
-                  placeholder="Username"
-                  value={formik.values.username}
-                  onChange={formik.handleChange}
-                />
-                <div className="error">
-                  {formik.touched.username && formik.errors.username}
-                </div>
-              </div>
-              <div className="input-fieldsignup">
-                <input
-                  className="inpsignup"
-                  name="email"
-                  type="email"
-                  placeholder="Email"
-                  value={formik.values.email}
-                  onChange={formik.handleChange}
-                />
-                <div className="error">
-                  {formik.touched.email && formik.errors.email}
-                </div>
+      </div>
+      <div className="right-div">
+        <form className="signupform" onSubmit={formik.handleSubmit}>
+          <h3 className="title">Sign Up</h3>
+          <div className="row">
+            <div className="input-fieldsignup">
+              <input
+                className="inpsignup"
+                name="username"
+                type="text"
+                placeholder="Username"
+                value={formik.values.username}
+                onChange={formik.handleChange}
+              />
+              <div className="error">
+                {formik.touched.username && formik.errors.username}
               </div>
             </div>
-            <div className="row">
-              <div className="input-fieldsignup">
-                <input
-                  className="inpsignup"
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                  value={formik.values.password}
-                  onChange={formik.handleChange}
-                />
-                <div className="error">
-                  {formik.touched.password && formik.errors.password}
-                </div>
-              </div>
-              <div className="input-fieldsignup">
-                <input
-                  className="inpsignup"
-                  name="confirmPassword"
-                  type="password"
-                  placeholder="Confirm Password"
-                  value={formik.values.confirmPassword}
-                  onChange={formik.handleChange}
-                />
-                <div className="error">
-                  {formik.touched.confirmPassword &&
-                    formik.errors.confirmPassword}
-                </div>
+            <div className="input-fieldsignup">
+              <input
+                className="inpsignup"
+                name="email"
+                type="email"
+                placeholder="Email"
+                value={formik.values.email}
+                onChange={formik.handleChange}
+              />
+              <div className="error">
+                {formik.touched.email && formik.errors.email}
               </div>
             </div>
-            {!isLoading ? (
-              <input value="Signup" type="submit" className="btnsignup" />
-            ) : (
-              <div className="loader"></div>
-            )}
-            <div className="already">
-              <h4>Already have an Account? </h4>
-              <button onClick={() => navigate("/")}>Login</button>
+          </div>
+          <div className="row">
+            <div className="input-fieldsignup">
+              <input
+                className="inpsignup"
+                name="password"
+                type="password"
+                placeholder="Password"
+                value={formik.values.password}
+                onChange={formik.handleChange}
+              />
+              <div className="error">
+                {formik.touched.password && formik.errors.password}
+              </div>
             </div>
-          </form>
-        </div>
+            <div className="input-fieldsignup">
+              <input
+                className="inpsignup"
+                name="confirmPassword"
+                type="password"
+                placeholder="Confirm Password"
+                value={formik.values.confirmPassword}
+                onChange={formik.handleChange}
+              />
+              <div className="error">
+                {formik.touched.confirmPassword &&
+                  formik.errors.confirmPassword}
+              </div>
+            </div>
+          </div>
+          {!isLoading ? (
+            <input value="Signup" type="submit" className="btnsignup" />
+          ) : (
+            <div className="loader"></div>
+          )}
+          <div className="already">
+            <h4>Already have an Account? </h4>
+            <button onClick={() => navigate("/")}>Login</button>
+          </div>
+        </form>
       </div>
     </div>
   );

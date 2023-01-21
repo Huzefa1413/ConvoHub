@@ -33,6 +33,7 @@ div.navbar div.leftnav div.logoname {
   font-family: cursive;
   color: white;
   cursor: pointer;
+  letter-spacing: 1px;
 }
 
 div.rightnav img {

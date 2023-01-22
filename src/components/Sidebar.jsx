@@ -1,9 +1,11 @@
 import React from "react";
+import { useState, useEffect } from "react";
+
+import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
+import { db } from "../firebaseConfig";
+
 import "./styles/sidebar.css";
 import profilepic from "./assets/profile.png";
-import { useState, useEffect } from "react";
-import { collection, onSnapshot, query } from "firebase/firestore";
-import { db } from "../firebaseConfig";
 
 const Sidebar = () => {
   const [users, setUsers] = useState([]);
@@ -11,7 +13,7 @@ const Sidebar = () => {
   useEffect(() => {
     let unsubscribe = null;
     const getRealtimeData = async () => {
-      const q = query(collection(db, "users"));
+      const q = query(collection(db, "users"), orderBy("username"));
 
       unsubscribe = onSnapshot(q, (querySnapshot) => {
         const users = [];

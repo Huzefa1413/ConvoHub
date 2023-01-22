@@ -1,11 +1,13 @@
 import React from "react";
+import { useState, useEffect } from "react";
+
 import { getAuth } from "firebase/auth";
-import "./styles/profile.css";
-import profilepic from "./assets/profile.png";
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 import { db } from "../firebaseConfig";
-import { useState, useEffect } from "react";
+
 import Posts from "./Posts.jsx";
+import "./styles/profile.css";
+import profilepic from "./assets/profile.png";
 
 const Profile = () => {
   const auth = getAuth();

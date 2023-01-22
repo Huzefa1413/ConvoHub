@@ -2,11 +2,14 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useFormik } from "formik";
-import aviator from "./assets/aviator.png";
-import register from "./assets/register.png";
 import * as yup from "yup";
+import swal from "sweetalert";
+
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
 import "./styles/login.css";
+import register from "./assets/register.png";
+import aviator from "./assets/aviator.png";
 
 const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -42,7 +45,7 @@ const Login = () => {
       })
       .catch((error) => {
         setIsLoading(false);
-        alert("Invalid Email or Password");
+        swal("Invalid Email or Password", "", "error");
         console.error(error);
       });
   };

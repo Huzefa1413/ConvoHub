@@ -104,6 +104,8 @@ div.main-container div.right-div form.signupform div.error {
   text-align: left;
   letter-spacing: 1px;
   word-spacing: 2px;
+  padding-top: 3px;
+  font-family: cursive;
 }
 
 div.main-container div.right-div form.signupform input.btnsignup {
@@ -167,6 +169,7 @@ div.main-container div.right-div form.signupform div.already button {
   div.main-container div.left-div div.left-signupbtn {
     width: 50%;
     padding: 20px 0px;
+    border-radius: 0px 10px 0px 0px;
   }
 
   div.main-container div.right-div {

@@ -1,11 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import "./styles/addpost.css";
-import profile from "./assets/profile.png";
-import photos from "./assets/photos.png";
-import post from "./assets/post.png";
-import Posts from "./Posts.jsx";
 import axios from "axios";
+import swal from "sweetalert";
+
 import {
   collection,
   addDoc,
@@ -17,6 +14,12 @@ import {
 import { db } from "../firebaseConfig";
 import { getAuth } from "firebase/auth";
 
+import Posts from "./Posts.jsx";
+import "./styles/addpost.css";
+import profile from "./assets/profile.png";
+import photos from "./assets/photos.png";
+import post from "./assets/post.png";
+
 const AddPosts = () => {
   const [postText, setPostText] = useState("");
   const [posts, setPosts] = useState([]);
@@ -27,7 +30,11 @@ const AddPosts = () => {
   const savePost = async (e) => {
     e.preventDefault();
     if (postText === "" && image === null) {
-      alert("Please Write Something to Post OR Add Image to upload");
+      swal(
+        "Incomplete Data",
+        "Please Write Something to Post OR Add Image to upload",
+        "warning"
+      );
     } else {
       setIsLoading(true);
       if (image === null) {
@@ -77,7 +84,11 @@ const AddPosts = () => {
           setImage(null);
           setPostText("");
         } else {
-          alert("Only Images are allowed to upload! Invalid Image");
+          swal(
+            "Invalid Image",
+            "Only Images are allowed to upload!",
+            "warning"
+          );
           setIsLoading(false);
         }
       }

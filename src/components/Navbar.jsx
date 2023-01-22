@@ -1,10 +1,12 @@
 import React from "react";
-import logo from "./assets/gathering.png";
-import logout from "./assets/logout.png";
-import profilepic from "./assets/profile.png";
-import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+
+import { getAuth, signOut } from "firebase/auth";
+
 import "./styles/navbar.css";
+import logout from "./assets/logout.png";
+import logo from "./assets/gathering.png";
+import profilepic from "./assets/profile.png";
 
 const Navbar = () => {
   const navigate = useNavigate();

@@ -1,7 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import aviator from "./assets/aviator.png";
-import register from "./assets/register.png";
+import { useNavigate } from "react-router-dom";
+import { useFormik } from "formik";
+import * as yup from "yup";
+import swal from "sweetalert";
+
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -9,10 +12,10 @@ import {
 } from "firebase/auth";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebaseConfig";
-import { useNavigate } from "react-router-dom";
-import { useFormik } from "formik";
-import * as yup from "yup";
+
 import "./styles/signup.css";
+import aviator from "./assets/aviator.png";
+import register from "./assets/register.png";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -61,7 +64,7 @@ const Signup = () => {
           .then(() => {})
           .catch((error) => {
             console.error(error);
-            alert("Unable to Get Username");
+            swal("Unable to Get Username", "", "error");
             setIsLoading(false);
           });
         try {
@@ -78,7 +81,7 @@ const Signup = () => {
       })
       .catch((error) => {
         console.error(error);
-        alert("Unable to Signup, Email already in use");
+        swal("Unable to Signup", "Email Already in use", "warning");
         setIsLoading(false);
       });
   };

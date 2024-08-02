@@ -4,7 +4,7 @@ ConvoHub is a social media platform where users can sign up, log in, create post
 
 ## Demo
 
-[Live Demo](fakebook-e256d.web.app/) (Replace with actual link)
+[Live Demo](fakebook-e256d.web.app/)
 
 ## Key Features
 
@@ -28,7 +28,7 @@ Before you begin, ensure you have met the following requirements:
 
    ```sh
    git clone https://github.com/Huzefa1413/ConvoHub.git
-   cd convobhub
+   cd ConvoHub
    ```
 
 2. Install dependencies

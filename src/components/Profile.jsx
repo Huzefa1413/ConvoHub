@@ -1,13 +1,14 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React from 'react';
+import { useState, useEffect } from 'react';
 
-import { getAuth } from "firebase/auth";
-import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
-import { db } from "../firebaseConfig";
+import { getAuth } from 'firebase/auth';
+import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
+import { db } from '../firebaseConfig';
 
-import Posts from "./Posts.jsx";
-import "./styles/profile.css";
-import profilepic from "./assets/profile.png";
+import Posts from './Posts.jsx';
+import './styles/profile.css';
+import profilepic from './assets/profile.png';
+import coverpic from './assets/bg.jpg';
 
 const Profile = () => {
   const auth = getAuth();
@@ -15,7 +16,7 @@ const Profile = () => {
   useEffect(() => {
     let unsubscribe = null;
     const getRealtimeData = async () => {
-      const q = query(collection(db, "posts"), orderBy("createdOn", "desc"));
+      const q = query(collection(db, 'posts'), orderBy('createdOn', 'desc'));
 
       unsubscribe = onSnapshot(q, (querySnapshot) => {
         const posts = [];
@@ -43,7 +44,7 @@ const Profile = () => {
     <>
       <div className="maindiv">
         <div className="coverPicture">
-          <img src="https://source.unsplash.com/1000x300/?car" alt="" />
+          <img src={coverpic} alt="" />
         </div>
         <div className="profilePicture">
           <img src={profilepic} id="profpic" alt="" />
